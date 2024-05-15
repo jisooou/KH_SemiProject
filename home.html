@@ -7,32 +7,87 @@
     <title>여행의 정석</title>
 
     <link rel="stylesheet" href="./home.css">
+    <script defer src="./home.js"></script>
 </head>
 <body>
     <header>
         <img id="img-logo" src="./image/airbnb.png" alt="">
         <div class="header-right">
-            <div id="introduce">당신의 공간으로 여정을 시작하세요</div>
-            <div id="profile-icon">
+            <div id="introduce">당신의 공간을 여정하세요</div>
+            <div id="profile-icon" onclick="showAccountContent()">
                 <img id="menu-icon" width="16" src="./image/menu.svg" alt="메뉴 아이콘">
                 <img id="user-icon" width="30" src="./image/profile.svg" alt="유저 아이콘">
+            </div>
+            <div class="account-content" id="account-content">
+                <button>회원가입</button>
+                <button>로그인</button>
+                <hr>
+                <button>당신의 공간을 여정하세요</button>
+                <button>도움말 센터</button>
             </div>
         </div>
     </header>
 
+
     <nav>
         <div class="search">
-            <button id="search-place">여행지</button>
-            <button id="search-checkIn">체크인</button>
-            <button id="search-checkOut">체크아웃</button>
-            <button id="search-traveler">여행자</button>
-            <div id="search-icon">
-                <img src="" alt="검색 아이콘">
+            <button class="search-item" onclick="showPlaceSearch()">
+                <span>여행지</span>
+                <span>여행지 검색</span>
+            </button>
+            <div class="divider"></div>
+            <!-- 이 부분 캘린더 추가 -->
+            <button class="search-item" id="checkin-button" onclick="showCalendar('checkin')">
+                <span>체크인</span>
+                <span>날짜 추가</span>
+            </button>
+            <div class="divider"></div>
+            <!-- 이 부분 캘린더 추가 -->
+            <button class="search-item" id="checkout-button" onclick="showCalendar('checkout')">
+                <span>체크아웃</span>
+                <span>날짜 추가</span>
+            </button>
+            <div class="divider"></div>
+            <button class="search-item">
+                <span>여행자</span>
+                <span>게스트 추가</span>
+            </button>
+            <button class="search-icon">
+                <img src="./image/search.png" alt="검색 아이콘">
+            </button>
+
+            <div class="search-place" id="search-place">
+                <h4>지역으로 검색하기</h4>
+                <button class="search-place-button">
+                    <img src="./image/place-search.png" alt="유연한 검색">
+                    <span>유연한 검색</span>
+                </button>
+                <br>
+                <h4>한국</h4>
+                <div class=search-place-name>
+                    <button>서울</button>
+                    <button>부산</button>
+                    <button>속초</button>
+                    <button>강릉</button>
+                    <button>전주</button>
+                    <button>대구</button>
+                    <button>경주</button>
+                    <button>여수</button>
+                    <button>서귀포</button>
+                    <button>대전</button>
+                    <button>제주도</button>
+                    <button>인천</button>
+                    <button>인천</button>
+                    <button>인천</button>
+                    <button>인천</button>
+                    <button>인천</button>
+                </div>
             </div>
         </div>
     </nav>
+    
 
-    <br><hr id="line"><br>
+    <!-- <br><hr id="line"><br> -->
 
     <section>
       <div class="theme">
@@ -89,104 +144,227 @@
 
     <div class="main">
       <div class="image-container">
-        <div class="test">
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+                <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+                <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
-        <div>
-          <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
-          <div id="place-name">한국 애월읍, 제주시</div>
-          <div id="place-score">★ 4.79</div>
-          <div id="place">협재해수욕장</div>
-          <div id="place-date">₩273,882 / 박</div>
+        <div class="accomodation">
+            <img src="https://cdn.travelview.co.kr/travelview/2021/01/21020223/post_41596968_30400772_4.jpg" alt="숙소 사진">
+            <div class="heart-icon" onclick="clickHeart(this)">
+              <img class="heart-empty" src="./image/emptyheart.svg" alt="빈 찜 하트">
+              <img class="heart-filled" src="./image/pinkheart.png" alt="찜 하트">
+            </div>
+            <div id="place-name">한국 애월읍, 제주시</div>
+            <div id="place-score">★ 4.79</div>
+            <div id="place">협재해수욕장</div>
+            <div id="place-date">₩273,882 / 박</div>
         </div>
       </div>
     </div>
     
     <br><br><br>
 
-    <footer>
-        <div>에어비앤비 지원</div>
+    <!-- -----------------캘린더------------------------------------ -->
+    <div class="calendar-modal" id="calendar-modal">
+        <div class="calendar-content">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="current-month"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div class="calendar-body" id="calendar-body">
+                <!-- Calendar grids will be dynamically inserted here -->
+            </div>
+            <div class="calendar-footer">
+                <button id="close-calendar">닫기</button>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------------------------------------------- -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>에어비앤비 지원</h4>
+                <ul>
+                    <li>도움말 센터</li>
+                    <li>에어커버</li>
+                    <li>차별 반대</li>
+                    <li>장애인 지원</li>
+                    <li>예약 취소 옵션</li>
+                    <li>이웃 민원 신고</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>호스팅</h4>
+                <ul>
+                    <li>당신의 공간을 에어비앤비하세요</li>
+                    <li>호스트를 위한 에어커버</li>
+                    <li>호스팅 자료</li>
+                    <li>커뮤니티 포럼</li>
+                    <li>책임감 있는 호스팅</li>
+                    <li>무료 호스팅 클래스 참여하기</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>에어비앤비</h4>
+                <ul>
+                    <li>뉴스룸</li>
+                    <li>새로운 기능</li>
+                    <li>채용정보</li>
+                    <li>투자자 정보</li>
+                    <li>Airbnb 긴급 속보</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>© 2024 Airbnb, Inc.</p>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">사이트맵</a>
+                <a href="#">회사 세부정보</a>
+                <a href="#">한국의 변경된 환불 정책</a>
+            </div>
+            <div class="footer-language-currency">
+                <span>한국어 (KR)</span>
+                <span>KRW</span>
+            </div>
+        </div>
+        <div class="footer-social">
+            <img src="./image/facebook-icon.png" alt="Facebook">
+            <img src="./image/twitter-icon.png" alt="Twitter">
+            <img src="./image/instagram-icon.png" alt="Instagram">
+            <img src="./image/linkedin-icon.png" alt="LinkedIn">
+        </div>
     </footer>
+    
 </body>
 </html>
