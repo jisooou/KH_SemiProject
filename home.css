@@ -52,7 +52,7 @@ header{
   /* profile-icon에 margin-right랑 같이 움직여야 함. */
   right: 80px;
   background-color: white;
-  box-shadow: 0 8px 8px #DDDDDD;
+  box-shadow: 0 3px 5px #DDDDDD;
   /* 높이 설정할 때 z-index 필요할수도 */
   /* z-index: 2000; */
   border: 1px solid rgb(218, 217, 217);
@@ -90,7 +90,7 @@ header{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 6;
 }
 .join-content.show{
@@ -99,12 +99,89 @@ header{
 .join-box {
   background-color: white;
   border: 1px solid black;
-  height: 70%;
-  width: 25%;
+  height: 80%;
+  margin-top: 7%;
+  width: 30%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-  text-align: center;
+  text-align: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
   z-index: 7;
+  /* 내용 찰 경우, 스크롤 내려지게 하기  */
+  overflow-y: auto;
+}
+.checkbox-container{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.join-submit-button{
+  width: 100%;
+  height: 10%;
+  background-color: rgb(248, 75, 104);
+  border: 1px solid gray;
+  border-radius: 30px;
+  font-size: larger;
+  font-weight: bold;
+}
+/* ----------------------------------*/
+
+/* -------------로그인 창 띄우기-------------*/
+.login-content{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 6;
+}
+.login-content.show{
+  display: flex;
+}
+.login-box {
+  background-color: white;
+  border: 1px solid black;
+  height: 50%;
+  margin-top: 7%;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  text-align: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  z-index: 7;
+  /* 내용 찰 경우, 스크롤 내려지게 하기  */
+  /* overflow-y: auto; */
+}
+#login-id{
+  width: 99%;
+  height: 10%;
+  border-radius: 20px;
+}
+#login-password{
+  width: 99%;
+  height: 10%;
+  border-radius: 20px;
+}
+.login-submit-button{
+  width: 100%;
+  height: 15%;
+  background-color: rgb(248, 75, 104);
+  border: 1px solid gray;
+  border-radius: 30px;
+  font-size: larger;
+  font-weight: bold;
+}
+.show-password{
+  border: none;
+  background-color: transparent;
 }
 /* ----------------------------------*/
 

@@ -13,7 +13,6 @@ function showPlaceSearch(){
     document.getElementById('search-place').classList.toggle('show');
 }
 
-
 // 회원가입 창 나오도록
 function showJoin(){
     document.getElementById('join-content').classList.toggle('show');
@@ -21,10 +20,22 @@ function showJoin(){
 
 // 로그인 창 나오도록
 function showLogin(){
-    document.getElementById().classList.toggle('show');
+    document.getElementById('login-content').classList.toggle('show');
 }
 
+// 비밀번호 보기, 숨기기
+function showPassword() {
+    const passwordField = document.getElementById('login-password');
+    const showPasswordButton = document.querySelector('.show-password');
 
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        showPasswordButton.textContent = '비밀번호 숨기기';
+    } else {
+        passwordField.type = 'password';
+        showPasswordButton.textContent = '비밀번호 보기';
+    }
+}
 
 // ----------------------------------------------------
 // Calendar 관련 함수
