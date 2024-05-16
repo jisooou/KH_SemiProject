@@ -19,8 +19,8 @@
                 <img id="user-icon" width="30" src="./image/profile.svg" alt="유저 아이콘">
             </div>
             <div class="account-content" id="account-content">
-                <button>회원가입</button>
-                <button>로그인</button>
+                <button id="join" onclick="showJoin()">회원가입</button>
+                <button id="login" onclick="showLogin()">로그인</button>
                 <hr>
                 <button>당신의 공간을 여정하세요</button>
                 <button>도움말 센터</button>
@@ -28,6 +28,24 @@
         </div>
     </header>
 
+    <!-- 회원가입 창 -->
+    <div class="join-content" id="join-content">
+      <div class="join-box">
+        <h4>회원가입 완료하기</h4>
+        <hr>
+        <h4>실명</h4>
+        <input type="text" placeholder="신분증에 기재된 이름(예:길동)">
+        <input type="text" placeholder="신분증에 기재된 성(예: 홍)">
+        <h6>정부 발급 신분증에 기재된 이름과 일치해야 합니다. 평소 다른 이름을 사용하는 경우, <u>선호하는 이름</u>을 입력하세요.</h6>
+        <h4>생년월일</h4>
+        <input type="text">
+      </div>
+    </div>
+    <!--  -->
+
+    <!-- 로그인 창 -->
+
+    <!--  -->
 
     <nav>
         <div class="search">
@@ -309,61 +327,62 @@
         </div>
     </div>
     <!-- ----------------------------------------------------------------- -->
+    
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>에어비앤비 지원</h4>
-                <ul>
-                    <li>도움말 센터</li>
-                    <li>에어커버</li>
-                    <li>차별 반대</li>
-                    <li>장애인 지원</li>
-                    <li>예약 취소 옵션</li>
-                    <li>이웃 민원 신고</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>호스팅</h4>
-                <ul>
-                    <li>당신의 공간을 에어비앤비하세요</li>
-                    <li>호스트를 위한 에어커버</li>
-                    <li>호스팅 자료</li>
-                    <li>커뮤니티 포럼</li>
-                    <li>책임감 있는 호스팅</li>
-                    <li>무료 호스팅 클래스 참여하기</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>에어비앤비</h4>
-                <ul>
-                    <li>뉴스룸</li>
-                    <li>새로운 기능</li>
-                    <li>채용정보</li>
-                    <li>투자자 정보</li>
-                    <li>Airbnb 긴급 속보</li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>에어비앤비 지원</h4>
+          <ul>
+            <li><a href="https://www.airbnb.co.kr/help">도움말 센터</a></li>
+            <li><a href="https://www.airbnb.co.kr/help/article/3218">에어커버</a></li>
+            <li><a href="https://www.airbnb.co.kr/against-discrimination">차별 반대</a></li>
+            <li><a href="https://www.airbnb.co.kr/accessibility">장애인 지원</a></li>
+            <li><a href="https://www.airbnb.co.kr/help/article/2701">예약 취소 옵션</a></li>
+            <li><a href="https://www.airbnb.co.kr/help/article/3290">이웃 민원 신고</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-info">
-                <p>© 2024 Airbnb, Inc.</p>
-                <a href="#">개인정보 처리방침</a>
-                <a href="#">이용약관</a>
-                <a href="#">사이트맵</a>
-                <a href="#">회사 세부정보</a>
-                <a href="#">한국의 변경된 환불 정책</a>
-            </div>
-            <div class="footer-language-currency">
-                <span>한국어 (KR)</span>
-                <span>KRW</span>
-            </div>
+        <div class="footer-column">
+          <h4>호스팅</h4>
+          <ul>
+            <li><a href="https://www.airbnb.co.kr/host/homes?from_footer=1">당신의 공간을 여정하세요</a></li>
+            <li><a href="https://www.airbnb.co.kr/host/homes?from_footer=1">호스트를 위한 에어커버</a></li>
+            <li><a href="https://www.airbnb.co.kr/resources/hosting-homes">호스팅 자료</a></li>
+            <li><a href="https://community.withairbnb.com/t5/custom/page/page-id/CommunityCenterNotFound">커뮤니티 포럼</a></li>
+            <li><a href="https://www.airbnb.co.kr/help/article/1387">책임감 있는 호스팅</a></li>
+            <li><a href="https://www.airbnb.co.kr/ambassadors/joinaclass">무료 호스팅 클래스 참여하기</a></li>
+          </ul>
         </div>
-        <div class="footer-social">
-            <img src="./image/facebook-icon.png" alt="Facebook">
-            <img src="./image/twitter-icon.png" alt="Twitter">
-            <img src="./image/instagram-icon.png" alt="Instagram">
-            <img src="./image/linkedin-icon.png" alt="LinkedIn">
+        <div class="footer-column">
+          <h4>여정</h4>
+          <ul>
+            <li><a href="https://news.airbnb.com/">뉴스룸</a></li>
+            <li><a href="https://www.airbnb.co.kr/release">새로운 기능</a></li>
+            <li><a href="https://careers.airbnb.com/">채용정보</a></li>
+            <li><a href="https://investors.airbnb.com/home/default.aspx">투자자 정보</a></li>
+            <li><a href="https://ko.airbnb.org/?_set_bev_on_new_domain=1715824984_ZWY5ZmRiZjk5MTg0">여정 긴급 속보</a></li>
+          </ul>
         </div>
+      </div>
+      <div class="footer-language">
+        <span>한국어 (KR)</span>
+        <span>₩ KRW</span>
+      </div>
+      <div class="footer-sns">
+        <img src="./image//facebook.png" alt="facebook">
+        <img src="./image/twitter.png" alt="twitter">
+        <img src="./image/instagram.png" alt="instagram">
+        <img src="./image/blog.png" alt="blog">
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 여정, Inc.</span>
+        <div class="footer-link">
+          <a href="">개인정보 처리방침</a>
+          <a href="">이용약관</a>
+          <a href="">사이트맵</a>
+          <a href="">한국의 변경된 환불 정책</a>
+          <a href="">회사 세부정보</a>
+        </div>
+      </div>
     </footer>
     
 </body>

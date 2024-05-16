@@ -14,6 +14,18 @@ function showPlaceSearch(){
 }
 
 
+// 회원가입 창 나오도록
+function showJoin(){
+    document.getElementById('join-content').classList.toggle('show');
+}
+
+// 로그인 창 나오도록
+function showLogin(){
+    document.getElementById().classList.toggle('show');
+}
+
+
+
 // ----------------------------------------------------
 // Calendar 관련 함수
 document.addEventListener('DOMContentLoaded', function() {
