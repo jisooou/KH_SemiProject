@@ -1,19 +1,34 @@
+/* header */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.6;
+}
+
+header{
+  border-bottom: 1px solid rgb(221, 221, 221);
+  height: 50px;
+  padding-left: 25px;
+  padding-top: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 70px;
+
+  /* 추가한 부분 */
+  position: fixed; 
+  top: 0; 
+  width: 95%;
+  background-color: white; 
+  z-index: 4; 
+}
+
 #img-logo{
   width: 110px;
   height: 60px;
-  margin-left: 50px;
-}
-  
-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
 }
 
 .header-right{
@@ -43,6 +58,8 @@ header{
 #user-icon{
   padding: 0 0 0 8px;
 }
+/* --------------------------- */
+
 
 /* -------------계정 창 띄우기-------------*/
 .account-content{
@@ -191,9 +208,10 @@ nav{
   align-items: center;
   padding: 20px;
   background-color: #fff;
+  /* !!!!!!!!!!!!!!!!!!! */
   position: fixed;
   /* 위 공간 조정 */
-  top: 75px; 
+  top: 110px; 
   width: 100%;
   z-index: 3;
 }
@@ -344,10 +362,11 @@ section{
   padding: 30px;
   background-color: white;
   /* 테마 밑에 선 */
-  box-shadow: 0 8px 4px -7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 4px -7px none;
+  /* !!!!!!!!!!!!!!!! */
   position: fixed;
   /* !!!!!!!!!위 공간 조정 */
-  top: 180px; 
+  top: 210px; 
   width: 100%;
   z-index: 2;
 }
@@ -391,7 +410,7 @@ section{
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   /* 위 공간 조정 */
-  margin-top: 280px; 
+  margin-top: 15%; 
   padding: 20px;
 }
 
