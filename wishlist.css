@@ -211,6 +211,10 @@ section{
 
 .wishlist-letter{
   color: black;
+  margin-top: 10%;
+  margin-left: 3%;
+  font-size: xx-large;
+  font-weight: 600;
 }
 
 /* ---------------------------- */
@@ -227,7 +231,7 @@ section{
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   /* 위 공간 조정 */
-  margin-top: 15%; 
+  /* margin-top: 2%;  */
   padding: 20px;
 }
 

@@ -285,13 +285,14 @@ nav{
   border: 1px solid #DDDDDD;
   border-radius: 40px;
   padding: 20px;
-  width: 350px;
-  height: 550px;
+  width: 20%;
+  height: 400%;
 }
 .search-place img{
   width: 60px;
-  margin: auto;
+  /* margin: auto; */
   display: block;
+  margin-right: 100%;
 }
 .search-place-button{
   display: flex;
@@ -307,7 +308,6 @@ nav{
 .search-place button {
   background-color: none;
   padding: 8px 20px;
-  text-align: left;
   cursor: pointer;
   font-size: medium;
 }
@@ -338,6 +338,8 @@ nav{
   cursor: pointer;
   font-size: medium;
   margin-bottom: 10px;
+  width: 90%;
+  height: 80%;
 }
 .search-place-name button:hover{
   background-color: #f1f1f1;
