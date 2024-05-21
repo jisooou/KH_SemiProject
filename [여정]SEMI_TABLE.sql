@@ -149,7 +149,7 @@ CREATE TABLE RESERVATION(
     , SUM               NUMBER          DEFAULT 0
     , IN_DATE           CHAR(8)         NOT NULL
     , OUT_DATE          CHAR(8)         NOT NULL
-    , RESERVE_DATE      TIMESTAMP       NOT NULL
+    , RESERVE_DATE      TIMESTAMP       DEFAULT SYSDATE
     , DEL_YN            CHAR(1)         DEFAULT 'N' CHECK(DEL_YN IN ('Y', 'N'))
     , REFUND_YN         CHAR(1)         DEFAULT 'N' CHECK(REFUND_YN IN ('Y', 'N'))
 );
@@ -160,11 +160,13 @@ CREATE TABLE PAY_METHOD(
 );
 
 CREATE TABLE CARD_INFO(
-    NO                  NUMBER      PRIMARY KEY
+    NO                  NUMBER          PRIMARY KEY
     , MEM_NO            NUMBER
-    , CARD_NUM          CHAR(16)    NOT NULL UNIQUE
-    , CVC_NUM           CHAR(3)     NOT NULL UNIQUE
-    , EXPIRE_DATE       CHAR(8)     NOT NULL
+    , CARD_NICK         VARCHAR2(15)    NOT NULL UNIQUE
+    , CARD_NUM          CHAR(16)        NOT NULL UNIQUE
+    , CVC_NUM           CHAR(3)         NOT NULL UNIQUE
+    , EXPIRE_DATE       CHAR(8)         NOT NULL
+    , PWD               CHAR(6)         NOT NULL
 );
 
 CREATE TABLE REVIEW(
