@@ -94,7 +94,7 @@
         <div class="search">
             <button class="search-item" onclick="showPlaceSearch()">
                 <span>여행지</span>
-                <span>여행지 검색</span>
+                <span id="search-destination">여행지 검색</span>
             </button>
             <div class="divider"></div>
             <!-- 이 부분 캘린더 추가 -->
@@ -109,42 +109,81 @@
                 <span>날짜 추가</span>
             </button>
             <div class="divider"></div>
-            <button class="search-item">
+            <button class="search-item" onclick="showTravelerSearch()">
                 <span>여행자</span>
                 <span>게스트 추가</span>
             </button>
-            <button class="search-icon">
+            <button type="submit" class="search-icon">
                 <img src="./image/search.png" alt="검색 아이콘">
             </button>
 
             <div class="search-place" id="search-place">
-                <h4>지역으로 검색하기</h4>
+                <h5 class="search-place-letter">지역으로 검색하기</h5>
                 <button class="search-place-button">
                     <img src="./image/place-search.png" alt="유연한 검색">
                     <span>유연한 검색</span>
                 </button>
                 <br>
-                <h4>한국</h4><br>
+                <h5 class="search-place-letter">한국</h5><br>
                 <div class=search-place-name>
-                    <button>서울</button>
-                    <button>부산</button>
-                    <button>속초</button>
-                    <button>강릉</button>
-                    <button>전주</button>
-                    <button>대구</button>
-                    <button>경주</button>
-                    <button>여수</button>
-                    <button>서귀포</button>
-                    <button>대전</button>
-                    <button>제주도</button>
-                    <button>인천</button>
-                    <button>인천</button>
-                    <button>인천</button>
-                    <button>인천</button>
-                    <button>인천</button>
+                    <button onclick="updateSearchBar('서울')">서울</button>
+                    <button onclick="updateSearchBar('부산')">부산</button>
+                    <button onclick="updateSearchBar('속초')">속초</button>
+                    <button onclick="updateSearchBar('강릉')">강릉</button>
+                    <button onclick="updateSearchBar('전주')">전주</button>
+                    <button onclick="updateSearchBar('대구')">대구</button>
+                    <button onclick="updateSearchBar('경주')">경주</button>
+                    <button onclick="updateSearchBar('여수')">여수</button>
+                    <button onclick="updateSearchBar('서귀포')">전남</button>
+                    <button onclick="updateSearchBar('대전')">대전</button>
+                    <button onclick="updateSearchBar('제주도')">제주도</button>
+                    <button onclick="updateSearchBar('인천')">인천</button>
+                    <button onclick="updateSearchBar('서울')">경기</button>
+                    <button onclick="updateSearchBar('서울')">대전</button>
+                    <button onclick="updateSearchBar('서울')">충북</button>
+                    <button onclick="updateSearchBar('서울')">경남</button>
                 </div>
             </div>
         </div>
+
+        <div class="traveler" id="traveler">
+          <div class="traveler-option">
+            <span>성인</span>
+            <span class="age-info">13세 이상</span>
+            <div class="people-count">
+              <button class="decrease">-</button>
+              <span class="count">0</span>
+              <button class="increase">+</button>
+            </div>
+          </div>
+          <div class="traveler-option">
+            <span>어린이</span>
+            <span class="age-info">2~12세</span>
+            <div class="people-count">
+              <button class="decrease">-</button>
+              <span class="count">0</span>
+              <button class="increase">+</button>
+            </div>
+          </div>
+          <div class="traveler-option">
+            <span>유아</span>
+            <span class="age-info">2세 미만</span>
+            <div class="people-count">
+              <button class="decrease">-</button>
+              <span class="count">0</span>
+              <button class="increase">+</button>
+            </div>
+          </div>
+          <div class="traveler-option">
+            <span>반려동물</span>
+            <span class="age-info">보조동물을 동반하시나요?</span>
+            <div class="people-count">
+              <button class="decrease">-</button>
+              <span class="count">0</span>
+              <button class="increase">+</button>
+            </div>
+          </div>
+      </div>
     </nav>
     
 

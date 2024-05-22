@@ -13,6 +13,32 @@ function showPlaceSearch(){
     document.getElementById('search-place').classList.toggle('show');
 }
 
+// 여행자 검색창
+function showTravelerSearch(){
+    document.getElementById('traveler').classList.toggle('show');
+}
+
+// 여행자 검색창 - 숫자 COUNT
+document.querySelectorAll('.people-count').forEach(control => {
+
+    const decreaseButton = control.querySelector('.decrease');
+    const increaseButton = control.querySelector('.increase');
+    const countSpan = control.querySelector('.count');
+    let count = 0;
+  
+    decreaseButton.addEventListener('click', () => {
+      if (count > 0) {
+        count--;
+        countSpan.textContent = count;
+      }
+    });
+  
+    increaseButton.addEventListener('click', () => {
+      count++;
+      countSpan.textContent = count;
+    });
+});
+
 // 회원가입 창 나오도록
 function showJoin(){
     document.getElementById('join-content').classList.toggle('show');
@@ -37,8 +63,33 @@ function showPassword() {
     }
 }
 
+
+// 여행지 검색 
+function updateSearchBar(value){
+    document.getElementById('search-destination').textContent = value;
+}
+
+function showPlaceSearch(){
+    const searchPlace = document.getElementById('search-place');
+    searchPlace.classList.toggle('show');
+}
+
+document.querySelectorAll('.search-place-name button').forEach(button => {
+    button.addEventListener('click', () => {
+      updateSearchBar(button.textContent);
+      document.getElementById('search-place').classList.remove('show'); 
+    });
+});
+  
+document.querySelector('.search-place-button').addEventListener('click', () => {
+    updateSearchBar('유연한 검색');
+    document.getElementById('search-place').classList.remove('show'); 
+});
+
+
+
 // ----------------------------------------------------
-// Calendar 관련 함수
+// Calendar 관련 함수 -> ChatGPT
 document.addEventListener('DOMContentLoaded', function() {
     const calendarModal = document.getElementById('calendar-modal');
     const calendarBody = document.getElementById('calendar-body');
